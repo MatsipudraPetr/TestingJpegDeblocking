@@ -65,3 +65,6 @@ os.chdir(os.pardir)
 os.chdir("output")
 create_program_folders()
 os.chdir(os.pardir)
+
+metricsFile = open("results.csv", "w")
+metricsFile.write("img1,img2,psnr,psnrb,ssim,cross match value\n")
