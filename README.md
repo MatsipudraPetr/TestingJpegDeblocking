@@ -18,5 +18,5 @@ This uses:
 2. Launch the makefolders.py script
 3. Launch the compress.py script with appropriate parameters to compress the images
 4. Launch the restore.py script with appropriate parameters to restore the compressed images with a program
-5. Launch the metrics.py script to calculate the average PSNR, PSNR-B, SSIM and Cross Match Value (Feeatures) in results.csv
+5. Launch the metrics.py script to calculate the average PSNR, PSNR-B, SSIM and Cross Match Value (Feeatures) into results.csv
 6. Launch the metricscolmap.py script to write the COLMAP camera focal length into the output folder
