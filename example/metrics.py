@@ -116,6 +116,11 @@ def coordinates_match(img1, img2, radius = 1, cross_match = False):
 
     return cross_match_value
 
+
+if len(sys.argv) < 3:
+    print("Wrong argument.\nSpecify the input and output folders")
+    exit()
+
 dir1 = sys.argv[1]
 dir2 = sys.argv[2]
 
@@ -125,9 +130,10 @@ psnrbSum = 0.0
 featureSum = 0.0
 ssimSum = [0.0, 0.0]
 ssimTemp = []
+metricsFile = open("results.csv", "a")
 
 for file in os.listdir(dir2):
-    if file[-4:] == "jpeg":
+    if file[-4:] == "jpeg" or file[-4:] == "tiff":
         imgCount += 1
         img1 = cv2.imread(dir1 + '/' + file[:-4] + "tiff")
         img2 = cv2.imread(dir2 + '/' + file)
@@ -139,5 +145,4 @@ for file in os.listdir(dir2):
         ssimSum[1] += ssimTemp[1]
         ssimTemp.clear()
 
-metricsFile = open("results.csv", "a")
 metricsFile.write(dir1 + ',' + dir2 + ',' + str(psnrSum / imgCount) + ',' + str(psnrbSum / imgCount) + ',' + str(ssimSum[0] / imgCount) + ' ' + str(ssimSum[1] / imgCount) + ',' + str(featureSum / imgCount) + '\n')

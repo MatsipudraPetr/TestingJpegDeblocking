@@ -1,7 +1,7 @@
 import os
 import sys
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     print("Wrong argument.\nUse knusperli, jpegqs, jpeg2png or ffmpeg as the first argument\nUse JPEG60, JPEG80, JPEG90, 264CRF15, 264CRF24 or 264CRF28 as the second argument")
     exit()
 

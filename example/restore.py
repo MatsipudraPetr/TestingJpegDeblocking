@@ -13,7 +13,7 @@ elif sys.argv[1] == "ffmpeg":
     for infile in os.listdir(inputdir):
         if infile[-4:] == "jpeg":
             outfile = infile[:-4] + "tiff"
-            os.system("../ffmpeg -i " + inputdir + infile + " -vf deblock=filter=strong:block=4:alpha=0.12:beta=0.07:gamma=0.06:delta=0.05:planes=1 -qmin 1 -qscale:v 1 " + outputdir + outfile)
+            os.system("./ffmpeg -i " + inputdir + infile + " -vf deblock=filter=strong:block=4:alpha=0.12:beta=0.07:gamma=0.06:delta=0.05:planes=1 -qmin 1 -qscale:v 1 " + outputdir + outfile)
             print(infile + " restored")
 
 elif sys.argv[1] == "jpeg2png":
@@ -22,7 +22,7 @@ elif sys.argv[1] == "jpeg2png":
     for infile in os.listdir(inputdir):
         if infile[-4:] == "jpeg":
             outfile = infile[:-4] + "tiff"
-            os.system("../jpeg2png " + inputdir + infile + " -o " + outputdir + outfile)
+            os.system("./jpeg2png " + inputdir + infile + " -o " + outputdir + outfile)
             print(infile + " restored")
 
 elif sys.argv[1] == "jpegqs":
@@ -31,7 +31,7 @@ elif sys.argv[1] == "jpegqs":
     for infile in os.listdir(inputdir):
         if infile[-4:] == "jpeg":
             outfile = infile[:-4] + "tiff"
-            os.system("../jpegqs " + inputdir + infile + " " + outputdir + outfile)
+            os.system("./jpegqs " + inputdir + infile + " " + outputdir + outfile)
             print(infile + " restored")
 
 elif sys.argv[1] == "knusperli":
@@ -40,7 +40,7 @@ elif sys.argv[1] == "knusperli":
     for infile in os.listdir(inputdir):
         if infile[-4:] == "jpeg":
             outfile = infile[:-4] + "tiff"
-            os.system("../knusperli " + inputdir + infile + " " + outputdir + outfile)
+            os.system("./knusperli " + inputdir + infile + " " + outputdir + outfile)
             print(infile + " restored")
 
 else:
